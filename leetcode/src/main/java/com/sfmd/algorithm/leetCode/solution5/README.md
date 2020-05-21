@@ -1,10 +1,8 @@
-#### 思路
-
 ##### 概要
     
     循环检测, 从某个点进行分散,找到最大的回文子串与当前的回文子串进行比对
     
-    内部结果表示: 起始位置,长度 eg: {startIndex,endIndex} 表示 String.subString(startIndex,endIndex+1)
+    内部结果表示: 起始位置,结束位置 eg: {startIndex,endIndex} 表示 String.subString(startIndex,endIndex+1)
     
     哨兵: {0,0} / {0,1} 
     
