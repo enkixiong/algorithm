@@ -1,4 +1,4 @@
-package com.sfmd.algorithm.leetCode.solution206;
+package com.sfmd.algorithm.leetCode.linkedlist.solution206;
 
 /**
  * Definition for singly-linked list.

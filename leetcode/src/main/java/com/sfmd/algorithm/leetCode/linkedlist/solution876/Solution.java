@@ -1,4 +1,4 @@
-package com.sfmd.algorithm.leetCode.solution876;
+package com.sfmd.algorithm.leetCode.linkedlist.solution876;
 
 import com.sfmd.algorithm.leetCode.ListNode;
 

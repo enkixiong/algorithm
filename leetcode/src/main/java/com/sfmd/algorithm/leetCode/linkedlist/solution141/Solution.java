@@ -1,4 +1,4 @@
-package com.sfmd.algorithm.leetCode.solution141;
+package com.sfmd.algorithm.leetCode.linkedlist.solution141;
 
 public class Solution {
 

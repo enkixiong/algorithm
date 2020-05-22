@@ -1,4 +1,4 @@
-package com.sfmd.algorithm.leetCode.solution680;
+package com.sfmd.algorithm.leetCode.string.solution680;
 
 public class Solution {
 
