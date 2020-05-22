@@ -8,46 +8,28 @@ package com.sfmd.algorithm.leetCode.solution206;
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution2 {
 
     public ListNode reverseList(ListNode head) {
 
         // 哨兵
         ListNode begin = new ListNode(-1);
         begin.next = head;
-        reverseSubList(begin);
-        return begin.next;
-    }
 
-    public void reverseSubList(ListNode node){
+        ListNode reversed = new ListNode(-2);
 
-        if(node == null || node.next == null){
-            return;
+        ListNode transfer = null;
+
+        while(begin.next != null){
+            transfer = begin.next;
+            begin.next = begin.next.next;
+
+            transfer.next = reversed.next;
+            reversed.next = transfer;
+
         }
 
-        reverseSubList(node.next);
-
-        ListNode current = node;
-        while(current.next != null){
-            swap(current);
-            current = current.next;
-        }
-
-    }
-
-    /**
-     * 交换该节点之后的两个节点
-     * @param node0:当前节点
-     */
-    private void swap(ListNode node0){
-        if (node0.next == null || node0.next.next == null){
-            return;
-        }
-        ListNode node1 = node0.next;
-        ListNode node2 = node0.next.next;
-        node0.next = node1.next;
-        node1.next = node2.next;
-        node2.next = node1;
+        return reversed.next;
     }
 
     private static class ListNode {
@@ -81,10 +63,10 @@ class Solution {
         node4.next = node5;
 
         System.out.println(node1);
-//        System.out.println(new Solution().reverseList(node1));
+        System.out.println(new Solution2().reverseList(node1));
 //        System.out.println(new Solution().reverseList(node2));
 //        System.out.println(new Solution().reverseList(node3));
-        System.out.println(new Solution().reverseList(node4));
+//        System.out.println(new Solution2().reverseList(node4));
 //        System.out.println(new Solution().reverseList(node5));
 
 
