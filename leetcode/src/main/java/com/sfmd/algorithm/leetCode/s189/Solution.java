@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSON;
 class Solution {
 
     public void rotate(int[] nums, int k) {
-//        if (k == 0)
         k = k % nums.length;
         if (k == 0) {
             return;
@@ -30,7 +29,7 @@ class Solution {
     /**
      * 选取任意一个元素, 放置在转换后放置的位置；<br/>
      * 被放置的位置元素，作为下一个待放置的元素; <br/>
-     * 如何证明?
+     * 如何证明? 如何证明 以一个固定间隔跳跃式的访问一个数组, 访问元素有且仅有一次的访问数组?
      */
     private void rotateSwap(int[] nums, int k) {
         int start = -1;
@@ -69,8 +68,8 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        int[] data = new int[]{1, 2, 3, 4, 5, 6,7,8,9};
-        new Solution().rotate(data, 3);
+        int[] data = new int[]{1, 2, 3, 4, 5, 6,7,8,9,10};
+        new Solution().rotate(data, 4);
         System.out.println(JSON.toJSONString(data));
     }
 
