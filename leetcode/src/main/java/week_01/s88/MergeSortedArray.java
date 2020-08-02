@@ -1,4 +1,4 @@
-package week_01.moveElement.s88;
+package week_01.s88;
 
 class MergeSortedArray {
 

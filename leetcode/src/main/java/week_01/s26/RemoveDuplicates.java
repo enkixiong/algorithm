@@ -1,4 +1,4 @@
-package week_01.moveElement.s26;
+package week_01.s26;
 
 class RemoveDuplicates {
 

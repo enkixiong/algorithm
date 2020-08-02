@@ -1,7 +1,6 @@
-package week_01.moveElement.s283;
+package week_01.s283;
 
 import com.alibaba.fastjson.JSON;
-import com.sfmd.algorithm.leetCode.s126.Solution2;
 
 class MoveZeroes {
 

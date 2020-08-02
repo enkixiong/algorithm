@@ -1,4 +1,4 @@
-package week_01.moveElement.s61;
+package week_01.s61;
 
 /**
  * Definition for singly-linked list.
