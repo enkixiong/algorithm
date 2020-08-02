@@ -12,8 +12,10 @@ public class RotateListNode {
 
     public ListNode rotateRight(ListNode head, int k) {
 
+        // 获取长度
         int len = 0;
         ListNode node = head;
+        // 获取尾节点
         ListNode tail = node;
         while (node != null) {
             len++;
@@ -21,23 +23,27 @@ public class RotateListNode {
             node = node.next;
         }
 
+        // 退出
         if (len <= 1) {
             return head;
         }
 
+        // 重新计算 k
         int step = k % len;
         if (step == 0) {
             return head;
         }
 
-        // 找到指向开始反转的节点
+        // 找到指向开始旋转的节点
         ListNode newTail = head;
         for (int i = len - step - 1; i > 0; i--) {
             newTail = newTail.next;
         }
 
         ListNode kthHead = newTail.next;
+        // 断开
         newTail.next = null;
+        // 指向
         tail.next = head;
 
 

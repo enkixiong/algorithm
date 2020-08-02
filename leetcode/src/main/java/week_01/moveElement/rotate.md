@@ -87,7 +87,7 @@
 2. 本题根据上题思路一致,**处理k,转化为真实的 step** 
 3. 因为链表不具有`O(1)`的随机访问特性,所以上述思路都不成立, 不能在O(n)的时间复杂度内解决问题
 4. 链表移动元素的特点: 将节点从链表中删除,重新加入链表
-5. 本题的问题就是: 获取快速的一次性在链表尾部 `摘除K个元素`,将链表反转,并且转移到链表的头部？
+5. 本题的问题就是: 获取快速的一次性在链表尾部 `摘除K个元素`,并且转移到链表的头部？
 
 步骤: 
 1. 获取长度 len
@@ -101,8 +101,10 @@
 
     public ListNode rotateRight(ListNode head, int k) {
 
+        // 获取长度
         int len = 0;
         ListNode node = head;
+        // 获取尾节点
         ListNode tail = node;
         while (node != null) {
             len++;
@@ -110,23 +112,27 @@
             node = node.next;
         }
 
+        // 退出
         if (len <= 1) {
             return head;
         }
 
+        // 重新计算 k
         int step = k % len;
         if (step == 0) {
             return head;
         }
 
-        // 找到指向开始反转的节点
+        // 找到指向开始旋转的节点
         ListNode newTail = head;
         for (int i = len - step - 1; i > 0; i--) {
             newTail = newTail.next;
         }
 
         ListNode kthHead = newTail.next;
+        // 断开
         newTail.next = null;
+        // 指向
         tail.next = head;
 
 
