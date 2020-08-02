@@ -83,5 +83,48 @@
         return j+1;
     }
 
+### 283. 移动零
+
+思路: 将元素0换至后面; 保持扫描指针&更新指针之间的元素为0; 问题: 数组前K个非零元素,进行了没有必要的交换
+    
+    public void moveZeroes(int[] nums) {
+        // 待写入非0元素的位置
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            // swap元素
+            if (nums[i] != 0){
+                int tmp = nums[j];
+                nums[j++] = nums[i];
+                nums[i] = tmp;
+            }
+        }
+    }
+    
+思路: 1. 初始化更新指针&扫描指针; 2. 严格按照更新指针&扫描指针的思路进行处理
+
+    public void moveZeroes(int[] nums){
+        // 边界值: 全部非零
+        int j = nums.length;
+        
+        for (int i = 0; i < nums.length; i++) {
+            // 遇见第一个为零的元素,则说明当前元素为待更新指针
+            if (nums[i] == 0){
+                // 设置待更新元素
+                j = i;
+                break;
+            }
+        }
+        
+        // 从待更新指针之后开始扫描元素
+        for (int i = j+1; i < nums.length; i++) {
+            // 更新条件
+            if (nums[i] != 0){
+                // 更新并且维护新的更新指针
+                nums[j++] = nums[i];
+                // 更新
+                nums[i] = 0;
+            }
+        }
+    }
 
 ## 快排的思想: 移动元素

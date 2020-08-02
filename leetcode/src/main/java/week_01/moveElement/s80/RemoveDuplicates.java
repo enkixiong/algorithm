@@ -1,4 +1,4 @@
-package week_01.s80;
+package week_01.moveElement.s80;
 
 class RemoveDuplicates {
 

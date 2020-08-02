@@ -1,4 +1,4 @@
-package week_01.s27;
+package week_01.moveElement.s27;
 
 class RemoveElement {
 
