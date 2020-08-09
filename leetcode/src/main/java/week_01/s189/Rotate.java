@@ -2,6 +2,11 @@ package week_01.s189;
 
 import com.alibaba.fastjson.JSON;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class Rotate {
 
 
@@ -72,6 +77,16 @@ public class Rotate {
         int[] data = new int[]{1, 2, 3, 4, 5, 6,7,8,9,10};
         new Rotate().rotate(data, 4);
         System.out.println(JSON.toJSONString(data));
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6,7,8,9,11);
+        Integer[] array = new Integer[list.size()];
+        list.toArray(array);
+
+        String[] a = new String[]{"11","22"};
+        System.out.println(String.join("->",a));
+//        System.out.println(String.join(",", list));
     }
+
+
 
 }
